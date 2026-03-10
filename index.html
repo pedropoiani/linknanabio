@@ -5,175 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Miraí Flores</title>
   <meta name="description" content="A Melhor Floricultura de Itaperuna/RJ!">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #e9979e;
-      min-height: 100vh;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 60px 24px 80px;
-    }
-    .container {
-      width: 100%;
-      max-width: 480px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 32px;
-    }
-    .profile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      text-align: center;
-    }
-    .profile img {
-      width: 96px;
-      height: 96px;
-      border-radius: 8px;
-      object-fit: cover;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.25);
-    }
-    .profile h1 {
-      font-size: 28px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.4px;
-    }
-    .profile p {
-      font-size: 15px;
-      color: #fff;
-      line-height: 1.6;
-    }
-    .top-buttons {
-      display: flex;
-      gap: 12px;
-      width: 100%;
-      justify-content: center;
-    }
-    .top-buttons a {
-      flex: 1;
-      max-width: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 16px;
-      background: #fdfcfc;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      color: #111;
-      text-decoration: none;
-      transition: background 0.15s;
-    }
-    .top-buttons a:hover { background: #f0f0f0; }
-    .links {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .link-card {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: #f5f5f5;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      padding: 14px 16px;
-      text-decoration: none;
-      color: inherit;
-      transition: background 0.15s;
-    }
-    .link-card:hover { background: #ebebeb; }
-    .link-card img {
-      width: 48px;
-      height: 48px;
-      border-radius: 6px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-    .link-card .text { flex: 1; }
-    .link-card .text h3 {
-      font-size: 15px;
-      font-weight: 600;
-      color: #161616;
-      letter-spacing: -0.3px;
-    }
-    .link-card .text p {
-      font-size: 13px;
-      color: #7d7f83;
-      margin-top: 2px;
-      line-height: 1.4;
-    }
-    .link-card .btn {
-      background: #1c1c1c;
-      color: #ddd;
-      border: 1px solid #dbdbdb;
-      border-radius: 6px;
-      padding: 8px 14px;
-      font-size: 13px;
-      font-weight: 600;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .social-row {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-    }
-    .social-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      background: #f5f5f5;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 22px;
-      transition: background 0.15s;
-    }
-    .social-btn:hover { background: #ebebeb; }
-    .footer {
-      font-size: 12px;
-      color: rgba(255,255,255,0.7);
-      text-align: center;
-    }
-  </style>
+  <meta name="theme-color" content="#e9979e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/instafeed.js@2.0.2/lib/instafeed.min.js"></script>
+  <script async src="https://www.instagram.com/embed.js"></script>
 </head>
 <body>
+
+  <!-- Cover / Hero -->
+  <div class="cover"></div>
+
   <div class="container">
 
     <!-- Profile -->
     <div class="profile">
       <img src="https://framerusercontent.com/images/JQwYwnI0x87Uvii2c7hzjCd69yA.png?scale-down-to=512" alt="Logo Miraí Flores">
-      <h1>Miraí Flores</h1>
-      <p>
-        📍 A Floricultura mais completa de Itaperuna<br>
-        💐 Tornamos momentos especiais<br>
-        💖 Buquês, Arranjos, Presentes e muito +
-      </p>
+      <div class="profile-info">
+        <h1>Miraí Flores</h1>
+        <p>
+          📍 A Floricultura mais completa de Itaperuna<br>
+          💐 Tornamos momentos especiais<br>
+          💖 Buquês, Arranjos, Presentes e muito +
+        </p>
+      </div>
     </div>
 
     <!-- Top action buttons -->
     <div class="top-buttons">
-      <a href="https://www.miraiflores.shop" rel="noopener">🛒 Loja Online</a>
-      <a href="https://api.whatsapp.com/send?phone=5522997517940&text=Ol%C3%A1!%20Vim%20pelo%20seu%20link." target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a href="https://www.miraiflores.shop" rel="noopener" class="btn-loja">
+        <span class="btn-icon">🛒</span> Loja Online
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=5522997517940&text=Ol%C3%A1!%20Vim%20pelo%20seu%20link." target="_blank" rel="noopener" class="btn-whatsapp">
+        <span class="btn-icon">💬</span> WhatsApp
+      </a>
     </div>
 
     <!-- Link cards -->
     <div class="links">
 
       <a class="link-card" href="https://api.whatsapp.com/send?phone=5522997517940&text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20da%20sua%20linha%20de%20presentes." target="_blank" rel="noopener">
-        <img src="https://framerusercontent.com/images/5qSyVdImp5lROAiM9Jc25nTEA.png" alt="Presentes">
-        <div class="text">
+        <div class="card-icon">
+          <img src="https://framerusercontent.com/images/5qSyVdImp5lROAiM9Jc25nTEA.png" alt="Presentes">
+        </div>
+        <div class="card-body">
           <h3>Presentes 🎁💐</h3>
           <p>Envie a qualidade da Miraí Flores para quem você ama!</p>
         </div>
@@ -181,8 +58,10 @@
       </a>
 
       <a class="link-card" href="https://api.whatsapp.com/send?phone=5522997517940&text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20da%20sua%20linha%20de%20plantas%20e%20artigos%20de%20jardim." target="_blank" rel="noopener">
-        <img src="https://framerusercontent.com/images/94y3zK02aEFLB1qSIYhYjcfyDE.png" alt="Plantas">
-        <div class="text">
+        <div class="card-icon">
+          <img src="https://framerusercontent.com/images/94y3zK02aEFLB1qSIYhYjcfyDE.png" alt="Plantas">
+        </div>
+        <div class="card-body">
           <h3>Plantas e Artigos de Jardim 🌱</h3>
           <p>Entre em contato e confira nossas opções.</p>
         </div>
@@ -190,8 +69,10 @@
       </a>
 
       <a class="link-card" href="https://www.google.com/search?hl=pt-BR&gl=br&q=Mirai+Flores+-+68+Av.+Zulamith+Bittencourt+Ao+Lado+da+Quadra+Da+AABB+-+Centro,+Itaperuna+-+RJ,+28300-000&ludocid=11127492867508843650&lsig=AB86z5XLOGYUBxN2LrpPQ3n7AY3S&hl=pt&gl=BR#lrd=0xbc606580805313:0x9a6ccbce988eb482,3,,," target="_blank" rel="noopener">
-        <img src="https://framerusercontent.com/images/QyNIS7829ksWbnzRznC1YNKpTjA.png" alt="Feedback">
-        <div class="text">
+        <div class="card-icon">
+          <img src="https://framerusercontent.com/images/QyNIS7829ksWbnzRznC1YNKpTjA.png" alt="Feedback">
+        </div>
+        <div class="card-body">
           <h3>Feedback ⭐</h3>
           <p>Deixe sua avaliação para o nosso atendimento.</p>
         </div>
@@ -200,14 +81,49 @@
 
     </div>
 
-    <!-- Social icons -->
-    <div class="social-row">
-      <a class="social-btn" href="https://api.whatsapp.com/send?phone=5522997517940&text=Ol%C3%A1!%20Vim%20pelo%20seu%20link." target="_blank" rel="noopener" title="WhatsApp">💬</a>
-      <a class="social-btn" href="https://www.miraiflores.shop" target="_blank" rel="noopener" title="Loja Online">🛒</a>
+    <!-- Instagram Feed -->
+    <div class="instagram-section">
+      <div class="instagram-header">
+        <h2>Nos siga no Instagram</h2>
+        <a href="https://instagram.com/miraifloress" target="_blank" rel="noopener" class="instagram-username">@miraifloress</a>
+      </div>
+      <div class="instagram-post">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DVO2iAcFIAw/?igsh=MTgycWJrOXRyemhzdw==" data-instgrm-version="14"></blockquote>
+      </div>
+      <a href="https://instagram.com/miraifloress" target="_blank" rel="noopener" class="instagram-link">Ver mais no Instagram →</a>
     </div>
 
-    <p class="footer">© 2026 Miraí Flores · Itaperuna/RJ</p>
+    <!-- Localização/Gallery -->
+    <div class="location-section">
+      <div class="location-header">
+        <h2>📍 Localização</h2>
+        <p class="location-subtitle">Visite-nos em Itaperuna</p>
+        <a href="https://www.google.com/maps/dir/-19.8769035,-43.9932308/Mirai+Flores+-+68+Av.+Zulamith+Bittencourt+Ao+Lado+da+Quadra+Da+AABB+-+Centro,+Itaperuna+-+RJ,+28300-000/@-21.1139776,-42.3818822,10.11z/data=!4m10!4m9!1m1!4e1!1m5!1m1!1s0xbc606580805313:0x9a6ccbce988eb482!2m2!1d-41.8934079!2d-21.2018957!3e0?entry=ttu" target="_blank" rel="noopener" class="btn-rotas">Rotas →</a>
+      </div>
+      <div class="maps-container-inner">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3715.3674838839056!2d-41.86346!3d-21.26805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdb088f82c9c15%3A0x9a6ccbce988eb482!2sMiraí%20Flores!5e0!3m2!1spt-BR!2sbr!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <!-- Social icons -->
+    <div class="social-row">
+      <a class="social-btn" href="https://api.whatsapp.com/send?phone=5522997517940&text=Ol%C3%A1!%20Vim%20pelo%20seu%20link." target="_blank" rel="noopener" title="WhatsApp">
+        <span>💬</span>
+        <small>WhatsApp</small>
+      </a>
+      <a class="social-btn" href="https://www.miraiflores.shop" target="_blank" rel="noopener" title="Loja Online">
+        <span>🛒</span>
+        <small>Loja</small>
+      </a>
+    </div>
+
+    <footer class="footer">
+      <p>© 2026 Miraí Flores · Itaperuna/RJ</p>
+      <p class="footer-sub">Feito com 💖</p>
+    </footer>
 
   </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
