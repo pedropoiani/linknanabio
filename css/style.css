@@ -34,10 +34,22 @@ body {
   z-index: 0;
   overflow: hidden;
   background-image: url('../cover.jpg');
-  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@supports (-webkit-touch-callout: none) {
+  /* iOS fix - background-attachment: fixed não funciona em iOS */
+  .cover {
+    background-attachment: scroll;
+  }
+}
+
+@supports not (-webkit-touch-callout: none) {
+  .cover {
+    background-attachment: fixed;
+  }
 }
 
 .cover::after {
@@ -475,11 +487,12 @@ body {
 @media (max-width: 809px) {
   .cover {
     height: 50vh;
+    background-attachment: scroll;
   }
 
   .container {
-    gap: 40px;
-    padding: 70px 24px 48px;
+    gap: 32px;
+    padding: 60px 16px 48px;
   }
 
   .profile img {
@@ -487,30 +500,125 @@ body {
     height: 80px;
   }
 
+  .profile h1 {
+    font-size: 24px;
+  }
+
+  .profile p {
+    font-size: 14px;
+  }
+
   .top-buttons {
-    gap: 13px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .top-buttons a {
+    flex: 1;
+    min-width: 140px;
+    max-width: none;
+    padding: 10px 14px;
+    font-size: 13px;
   }
 
   .link-card {
     flex-direction: column;
     text-align: center;
     gap: 12px;
+    padding: 16px;
   }
 
   .card-icon {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
     margin: 0 auto;
+  }
+
+  .link-card h3 {
+    font-size: 15px;
+  }
+
+  .link-card p {
+    font-size: 12px;
   }
 
   .link-card .btn {
     width: 100%;
+    padding: 10px 14px;
+  }
+
+  .instagram-section,
+  .location-section {
+    border-radius: 12px;
+  }
+
+  .instagram-header,
+  .location-header {
+    padding: 20px 16px;
+  }
+
+  .instagram-section h2,
+  .location-section h2 {
+    font-size: 18px;
+  }
+
+  .instagram-post {
+    padding: 16px;
+    min-height: 300px;
+  }
+
+  .maps-container-inner {
+    height: 280px;
+  }
+
+  .btn-rotas,
+  .instagram-link {
+    padding: 10px 20px;
+    font-size: 13px;
   }
 
   .social-btn {
     width: 70px;
     height: 70px;
     font-size: 22px;
+  }
+
+  .social-btn small {
+    font-size: 9px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 380px) {
+  .container {
+    padding: 50px 12px 40px;
+  }
+
+  .top-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .top-buttons a {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .profile h1 {
+    font-size: 22px;
+  }
+
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .social-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
   }
 }
 
