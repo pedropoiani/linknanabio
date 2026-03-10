@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de Terra e Substrato | Miraí Flores</title>
+  <meta name="description" content="Descubra quantos litros de terra ou substrato você precisa para seus vasos">
+  <meta name="theme-color" content="#e9979e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/calculadora.css">
+</head>
+<body class="calculadora-page">
+
+  <!-- Cover / Hero -->
+  <div class="cover"></div>
+
+  <div class="container">
+
+    <!-- Header com voltar -->
+    <div class="calc-header">
+      <a href="index.html" class="btn-voltar">← Voltar</a>
+    </div>
+
+    <!-- Profile -->
+    <div class="profile">
+      <img src="https://framerusercontent.com/images/JQwYwnI0x87Uvii2c7hzjCd69yA.png?scale-down-to=512" alt="Logo Miraí Flores">
+      <div class="profile-info">
+        <h1>Calculadora de Terra e Substrato</h1>
+        <p>Descubra quantos litros você precisa e qual produto comprar para seus vasos</p>
+      </div>
+    </div>
+
+    <!-- Calculadora -->
+    <div class="calculadora-container">
+      
+      <!-- Step 1: Tipo do Vaso -->
+      <div class="calc-step active" id="step-1">
+        <div class="step-header">
+          <span class="step-number">1</span>
+          <h2>Qual o formato do seu vaso?</h2>
+        </div>
+        <div class="pot-types">
+          <button class="pot-type-btn" data-type="redondo">
+            <div class="pot-icon">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="40" cy="20" rx="28" ry="10" stroke="currentColor" stroke-width="3" fill="none"/>
+                <path d="M12 20 L18 65 Q20 70 40 70 Q60 70 62 65 L68 20" stroke="currentColor" stroke-width="3" fill="none"/>
+                <ellipse cx="40" cy="65" rx="22" ry="6" stroke="currentColor" stroke-width="3" fill="none"/>
+              </svg>
+            </div>
+            <span>Redondo</span>
+          </button>
+          <button class="pot-type-btn" data-type="retangular">
+            <div class="pot-icon">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="15" width="60" height="10" rx="2" stroke="currentColor" stroke-width="3" fill="none"/>
+                <path d="M12 25 L16 65 Q17 68 40 68 Q63 68 64 65 L68 25" stroke="currentColor" stroke-width="3" fill="none"/>
+                <rect x="16" y="62" width="48" height="8" rx="2" stroke="currentColor" stroke-width="3" fill="none"/>
+              </svg>
+            </div>
+            <span>Retangular</span>
+          </button>
+          <button class="pot-type-btn" data-type="afunilado">
+            <div class="pot-icon">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="40" cy="18" rx="30" ry="10" stroke="currentColor" stroke-width="3" fill="none"/>
+                <path d="M10 18 L25 65" stroke="currentColor" stroke-width="3"/>
+                <path d="M70 18 L55 65" stroke="currentColor" stroke-width="3"/>
+                <ellipse cx="40" cy="65" rx="15" ry="5" stroke="currentColor" stroke-width="3" fill="none"/>
+              </svg>
+            </div>
+            <span>Afunilado</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Medidas -->
+      <div class="calc-step" id="step-2">
+        <div class="step-header">
+          <span class="step-number">2</span>
+          <h2>Informe as medidas</h2>
+          <p class="step-subtitle">Todas as medidas em centímetros (cm)</p>
+        </div>
+        
+        <!-- Medidas para vaso REDONDO -->
+        <div class="medidas-form" id="medidas-redondo" style="display: none;">
+          <div class="form-group">
+            <label for="diametro">Diâmetro superior</label>
+            <div class="input-wrapper">
+              <input type="number" id="diametro" placeholder="Ex: 30" min="1" step="0.1">
+              <span class="input-unit">cm</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="altura-redondo">Altura do vaso</label>
+            <div class="input-wrapper">
+              <input type="number" id="altura-redondo" placeholder="Ex: 25" min="1" step="0.1">
+              <span class="input-unit">cm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medidas para vaso RETANGULAR -->
+        <div class="medidas-form" id="medidas-retangular" style="display: none;">
+          <div class="form-group">
+            <label for="comprimento">Comprimento</label>
+            <div class="input-wrapper">
+              <input type="number" id="comprimento" placeholder="Ex: 40" min="1" step="0.1">
+              <span class="input-unit">cm</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="largura">Largura</label>
+            <div class="input-wrapper">
+              <input type="number" id="largura" placeholder="Ex: 20" min="1" step="0.1">
+              <span class="input-unit">cm</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="altura-retangular">Altura do vaso</label>
+            <div class="input-wrapper">
+              <input type="number" id="altura-retangular" placeholder="Ex: 25" min="1" step="0.1">
+              <span class="input-unit">cm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medidas para vaso AFUNILADO -->
+        <div class="medidas-form" id="medidas-afunilado" style="display: none;">
+          <div class="form-group">
+            <label for="diametro-superior">Diâmetro superior (boca)</label>
+            <div class="input-wrapper">
+              <input type="number" id="diametro-superior" placeholder="Ex: 35" min="1" step="0.1">
+              <span class="input-unit">cm</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="diametro-inferior">Diâmetro inferior (base)</label>
+            <div class="input-wrapper">
+              <input type="number" id="diametro-inferior" placeholder="Ex: 20" min="1" step="0.1">
+              <span class="input-unit">cm</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="altura-afunilado">Altura do vaso</label>
+            <div class="input-wrapper">
+              <input type="number" id="altura-afunilado" placeholder="Ex: 30" min="1" step="0.1">
+              <span class="input-unit">cm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Campos comuns -->
+        <div class="medidas-comum" style="display: none;">
+          <div class="form-group">
+            <label for="quantidade-vasos">Quantidade de vasos</label>
+            <div class="input-wrapper">
+              <input type="number" id="quantidade-vasos" value="1" min="1" max="100">
+              <span class="input-unit">un</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Nível de preenchimento</label>
+            <div class="preenchimento-options">
+              <button class="preenchimento-btn" data-value="1">100%</button>
+              <button class="preenchimento-btn active" data-value="0.9">90%</button>
+              <button class="preenchimento-btn" data-value="0.8">80%</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-next" id="btn-to-step-3" disabled>Continuar</button>
+      </div>
+
+      <!-- Step 3: Tipo de Produto -->
+      <div class="calc-step" id="step-3">
+        <div class="step-header">
+          <span class="step-number">3</span>
+          <h2>Qual produto você deseja usar?</h2>
+        </div>
+        <div class="product-types">
+          <button class="product-type-btn" data-product="terra">
+            <div class="product-icon">🌱</div>
+            <div class="product-info">
+              <h3>Terra Vegetal com Húmus</h3>
+              <p>Ideal para vasos, jardins e plantio em geral</p>
+            </div>
+          </button>
+          <button class="product-type-btn" data-product="substrato-40l">
+            <div class="product-icon">🪴</div>
+            <div class="product-info">
+              <h3>Substrato 40L</h3>
+              <p>Substrato pronto para plantio</p>
+            </div>
+          </button>
+          <button class="product-type-btn" data-product="rosa-deserto">
+            <div class="product-icon">🌺</div>
+            <div class="product-info">
+              <h3>Substrato Rosa do Deserto 10kg</h3>
+              <p>Formulação especial para rosa do deserto</p>
+            </div>
+          </button>
+          <button class="product-type-btn" data-product="flores-folhagens">
+            <div class="product-icon">🌸</div>
+            <div class="product-info">
+              <h3>Substrato Flores e Folhagens 10kg</h3>
+              <p>Ideal para plantas ornamentais</p>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 4: Resultado -->
+      <div class="calc-step" id="step-4">
+        <div class="step-header">
+          <span class="step-number">✓</span>
+          <h2>Resultado</h2>
+        </div>
+        
+        <div class="resultado-resumo">
+          <div class="resultado-item">
+            <span class="resultado-label">Volume necessário</span>
+            <span class="resultado-valor" id="resultado-litros">0 L</span>
+          </div>
+          <div class="resultado-item">
+            <span class="resultado-label">Peso estimado</span>
+            <span class="resultado-valor" id="resultado-peso">0 kg</span>
+          </div>
+        </div>
+
+        <div class="recomendacao-principal">
+          <h3>🎯 Produto Recomendado</h3>
+          <div class="produto-card-grande" id="produto-recomendado">
+            <div class="produto-imagem">
+              <img src="" alt="Produto" id="produto-img">
+            </div>
+            <div class="produto-detalhes">
+              <h4 id="produto-nome">-</h4>
+              <p class="produto-equiv" id="produto-equiv">-</p>
+              <div class="produto-quantidade">
+                <span class="qtd-label">Quantidade:</span>
+                <span class="qtd-valor" id="produto-qtd">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alternativas-section" id="alternativas-container" style="display: none;">
+          <h3>📦 Outras opções</h3>
+          <div class="alternativas-lista" id="alternativas-lista">
+            <!-- Alternativas serão inseridas via JS -->
+          </div>
+        </div>
+
+        <div class="observacao">
+          <p>⚠️ A quantidade é aproximada e pode variar conforme compactação e tipo de plantio.</p>
+        </div>
+
+        <div class="resultado-acoes">
+          <a href="#" class="btn-whatsapp-pedido" id="btn-whatsapp-pedido" target="_blank" rel="noopener">
+            <span>💬</span> Quero Pedir esse Produto
+          </a>
+          <button class="btn-recalcular" id="btn-recalcular">
+            🔄 Fazer Nova Simulação
+          </button>
+        </div>
+      </div>
+
+      <!-- Progress indicator -->
+      <div class="calc-progress">
+        <div class="progress-step active" data-step="1">1</div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="2">2</div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="3">3</div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="4">✓</div>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+      <p>© 2026 Miraí Flores · Itaperuna/RJ</p>
+      <p class="footer-sub">Feito com 💖</p>
+    </footer>
+
+  </div>
+
+  <script src="js/calculadora.js"></script>
+</body>
+</html>

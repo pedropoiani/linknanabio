@@ -1,0 +1,674 @@
+/* ========================================
+   Miraí Flores - Calculadora de Terra
+   Estilos específicos da calculadora
+   ======================================== */
+
+/* === Ajustes para a página da calculadora === */
+.calculadora-page .profile h1 {
+  font-size: 24px;
+}
+
+.calculadora-page .profile p {
+  font-size: 14px;
+}
+
+/* === Header com botão voltar === */
+.calc-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: -24px;
+}
+
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-voltar:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* === Container da Calculadora === */
+.calculadora-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* === Steps === */
+.calc-step {
+  display: none;
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.4s ease;
+}
+
+.calc-step.active {
+  display: block;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #e9979e;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.step-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #161616;
+  margin-bottom: 4px;
+}
+
+.step-subtitle {
+  font-size: 14px;
+  color: #7d7f83;
+}
+
+/* === Seleção de Tipo de Vaso === */
+.pot-types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.pot-type-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 12px;
+  background: #f8f8f8;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pot-type-btn:hover {
+  background: #fff;
+  border-color: #e9979e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.pot-type-btn.active {
+  background: #fff;
+  border-color: #e9979e;
+  box-shadow: 0 4px 16px rgba(233, 151, 158, 0.25);
+}
+
+.pot-icon {
+  width: 60px;
+  height: 60px;
+  color: #e9979e;
+}
+
+.pot-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.pot-type-btn span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* === Formulário de Medidas === */
+.medidas-form,
+.medidas-comum {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: #e9979e;
+}
+
+.input-wrapper input {
+  flex: 1;
+  border: none;
+  padding: 14px 16px;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+}
+
+.input-wrapper input::placeholder {
+  color: #aaa;
+}
+
+.input-unit {
+  padding: 14px 16px;
+  background: #f5f5f5;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+}
+
+/* === Preenchimento === */
+.preenchimento-options {
+  display: flex;
+  gap: 8px;
+}
+
+.preenchimento-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preenchimento-btn:hover {
+  border-color: #e9979e;
+}
+
+.preenchimento-btn.active {
+  background: #e9979e;
+  border-color: #e9979e;
+  color: #fff;
+}
+
+/* === Botões de Ação === */
+.btn-next {
+  width: 100%;
+  padding: 16px 24px;
+  background: #e9979e;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.btn-next:hover:not(:disabled) {
+  background: #d88990;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(233, 151, 158, 0.4);
+}
+
+.btn-next:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* === Seleção de Tipo de Produto === */
+.product-types {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-type-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #f8f8f8;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.product-type-btn:hover {
+  background: #fff;
+  border-color: #e9979e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-type-btn.active {
+  background: #fff;
+  border-color: #e9979e;
+  box-shadow: 0 4px 16px rgba(233, 151, 158, 0.25);
+}
+
+.product-icon {
+  font-size: 32px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(233, 151, 158, 0.1);
+  border-radius: 12px;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-info h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #161616;
+  margin-bottom: 2px;
+}
+
+.product-info p {
+  font-size: 13px;
+  color: #7d7f83;
+}
+
+/* === Resultado === */
+.resultado-resumo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.resultado-item {
+  background: linear-gradient(135deg, #e9979e, #d88990);
+  padding: 20px 16px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.resultado-label {
+  display: block;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 4px;
+}
+
+.resultado-valor {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* === Produto Recomendado === */
+.recomendacao-principal {
+  margin-bottom: 24px;
+}
+
+.recomendacao-principal h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #161616;
+  margin-bottom: 16px;
+}
+
+.produto-card-grande {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 16px;
+  border: 2px solid #e9979e;
+}
+
+.produto-imagem {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.produto-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.produto-detalhes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.produto-detalhes h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #161616;
+  line-height: 1.3;
+}
+
+.produto-equiv {
+  font-size: 13px;
+  color: #7d7f83;
+}
+
+.produto-quantidade {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.qtd-label {
+  font-size: 13px;
+  color: #666;
+}
+
+.qtd-valor {
+  font-size: 13px;
+  font-weight: 700;
+  color: #e9979e;
+}
+
+/* === Alternativas === */
+.alternativas-section {
+  margin-bottom: 24px;
+}
+
+.alternativas-section h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #161616;
+  margin-bottom: 12px;
+}
+
+.alternativas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alternativa-item {
+  padding: 16px;
+  background: #f8f8f8;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.alternativa-titulo {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e9979e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.alternativa-descricao {
+  font-size: 14px;
+  font-weight: 600;
+  color: #161616;
+  margin-bottom: 4px;
+}
+
+.alternativa-info {
+  font-size: 12px;
+  color: #7d7f83;
+}
+
+/* === Observação === */
+.observacao {
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 24px;
+}
+
+.observacao p {
+  font-size: 13px;
+  color: #f57c00;
+  line-height: 1.4;
+}
+
+/* === Ações do Resultado === */
+.resultado-acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-whatsapp-pedido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px 24px;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-whatsapp-pedido:hover {
+  background: #1da851;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+}
+
+.btn-recalcular {
+  width: 100%;
+  padding: 14px 24px;
+  background: #fff;
+  color: #333;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-recalcular:hover {
+  border-color: #e9979e;
+  color: #e9979e;
+}
+
+/* === Indicador de Progresso === */
+.calc-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-top: 16px;
+}
+
+.progress-step {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.progress-step.active {
+  background: #fff;
+  border-color: #fff;
+  color: #e9979e;
+}
+
+.progress-step.current {
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.4);
+}
+
+.progress-line {
+  width: 40px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* === Responsivo === */
+@media (max-width: 809px) {
+  .calculadora-page .container {
+    gap: 24px;
+    padding: 60px 16px 48px;
+  }
+
+  .calculadora-page .profile h1 {
+    font-size: 20px;
+  }
+
+  .calc-step {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .step-header h2 {
+    font-size: 18px;
+  }
+
+  .pot-types {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .pot-type-btn {
+    padding: 16px 8px;
+  }
+
+  .pot-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .pot-type-btn span {
+    font-size: 11px;
+  }
+
+  .resultado-valor {
+    font-size: 24px;
+  }
+
+  .produto-card-grande {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .produto-detalhes h4 {
+    font-size: 15px;
+  }
+
+  .produto-quantidade {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .progress-step {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+
+  .progress-line {
+    width: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .pot-types {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .pot-type-btn {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .pot-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .resultado-resumo {
+    grid-template-columns: 1fr;
+  }
+
+  .preenchimento-options {
+    flex-direction: column;
+  }
+}
