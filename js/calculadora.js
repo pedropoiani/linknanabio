@@ -359,11 +359,25 @@ function inicializarCalculadora() {
   // Event listeners para tipo de vaso
   document.querySelectorAll('.pot-type-btn').forEach(btn => {
     btn.addEventListener('click', () => selecionarTipoVaso(btn.dataset.type));
+    // Garantir que cliques em elementos internos também funcionem
+    btn.querySelectorAll('*').forEach(child => {
+      child.addEventListener('click', (e) => {
+        e.stopPropagation();
+        selecionarTipoVaso(btn.dataset.type);
+      });
+    });
   });
 
   // Event listeners para tipo de produto
   document.querySelectorAll('.product-type-btn').forEach(btn => {
     btn.addEventListener('click', () => selecionarTipoProduto(btn.dataset.product));
+    // Garantir que cliques em elementos internos também funcionem
+    btn.querySelectorAll('*').forEach(child => {
+      child.addEventListener('click', (e) => {
+        e.stopPropagation();
+        selecionarTipoProduto(btn.dataset.product);
+      });
+    });
   });
 
   // Event listeners para preenchimento

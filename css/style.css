@@ -233,6 +233,10 @@ body {
   text-align: center;
 }
 
+.link-card .btn-icon {
+  display: none;
+}
+
 .link-card:hover .btn {
   background: #e9979e;
 }
@@ -522,10 +526,11 @@ body {
   }
 
   .link-card {
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
     gap: 12px;
     padding: 16px;
+    position: relative;
   }
 
   .card-icon {
@@ -537,15 +542,28 @@ body {
 
   .link-card h3 {
     font-size: 15px;
+    text-align: left;
   }
 
   .link-card p {
     font-size: 12px;
+    text-align: left;
   }
 
   .link-card .btn {
-    width: 100%;
-    padding: 10px 14px;
+    display: none;
+  }
+
+  .link-card .btn-icon {
+    display: block;
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    right: 10px;
+    border: 1px solid #8C8C8C;
+    border-radius: 5px;
+    padding: 7px;
+    position: absolute;
   }
 
   .instagram-section,

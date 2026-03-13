@@ -672,3 +672,160 @@
     flex-direction: column;
   }
 }
+
+/* === Dica Box === */
+.dica-box {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: linear-gradient(135deg, #fff8e1, #fff3cd);
+  border: 1px solid #ffe082;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.dica-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.dica-box p {
+  font-size: 13px;
+  color: #5d4e37;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.dica-box strong {
+  color: #795548;
+}
+
+/* === Pot Type Button - Melhorado === */
+.pot-type-btn small {
+  font-size: 11px;
+  color: #999;
+  font-weight: 400;
+  margin-top: -4px;
+}
+
+.pot-type-btn.active small {
+  color: #e9979e;
+}
+
+/* === Ilustração de Medição === */
+.medida-ilustracao {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.medida-ilustracao svg {
+  max-width: 100%;
+  height: auto;
+  max-height: 160px;
+}
+
+.ilustracao-legenda {
+  font-size: 13px;
+  color: #666;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* === Labels Melhorados === */
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.label-icon {
+  font-size: 16px;
+}
+
+.label-hint {
+  font-size: 12px;
+  color: #999;
+  margin: 2px 0 8px 0;
+  line-height: 1.4;
+}
+
+/* === Separator === */
+.separator {
+  border: none;
+  border-top: 1px dashed #ddd;
+  margin: 24px 0;
+}
+
+/* === Product Tags === */
+.product-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-top: 8px;
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.product-tag.popular {
+  background: #fff8e1;
+  color: #f57c00;
+}
+
+.product-tag.especial {
+  background: #fce4ec;
+  color: #c2185b;
+}
+
+/* === Responsivo - Novos elementos === */
+@media (max-width: 809px) {
+  .dica-box {
+    padding: 14px;
+  }
+
+  .dica-icon {
+    font-size: 20px;
+  }
+
+  .dica-box p {
+    font-size: 12px;
+  }
+
+  .medida-ilustracao {
+    padding: 16px;
+  }
+
+  .medida-ilustracao svg {
+    max-height: 140px;
+  }
+
+  .ilustracao-legenda {
+    font-size: 12px;
+  }
+
+  .pot-type-btn small {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .dica-box {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .medida-ilustracao svg {
+    max-height: 120px;
+  }
+
+  .pot-type-btn small {
+    display: none;
+  }
+}

@@ -15,6 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
     el.style.animationDelay = `${index * 0.12}s`;
   });
 
+  // Garantir que btn-icon execute as mesmas funções do btn (navegar para o link pai)
+  document.querySelectorAll('.link-card .btn-icon').forEach(btnIcon => {
+    btnIcon.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const linkCard = btnIcon.closest('.link-card');
+      if (linkCard && linkCard.href) {
+        if (linkCard.target === '_blank') {
+          window.open(linkCard.href, '_blank', 'noopener');
+        } else {
+          window.location.href = linkCard.href;
+        }
+      }
+    });
+  });
+
   // Parallax suave no cover ao rolar (inspirado no EXEMPLO)
   const cover = document.querySelector('.cover');
   if (cover) {
