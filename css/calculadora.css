@@ -239,6 +239,44 @@
   color: #fff;
 }
 
+/* === Navegação entre Steps === */
+.step-navigation {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.step-navigation .btn-next {
+  flex: 1;
+  margin-top: 0;
+}
+
+.btn-back {
+  padding: 16px 20px;
+  background: #fff;
+  color: #666;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-back:hover {
+  border-color: #e9979e;
+  color: #e9979e;
+  background: #fff;
+}
+
+.btn-back-full {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 12px 20px;
+  font-size: 13px;
+}
+
 /* === Botões de Ação === */
 .btn-next {
   width: 100%;
@@ -827,5 +865,15 @@
 
   .pot-type-btn small {
     display: none;
+  }
+
+  .step-navigation {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .btn-back {
+    width: 100%;
+    padding: 12px 16px;
   }
 }

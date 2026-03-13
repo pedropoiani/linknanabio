@@ -388,6 +388,10 @@ function inicializarCalculadora() {
   // Event listener para botão de continuar
   document.getElementById('btn-to-step-3').addEventListener('click', validarEContinuar);
 
+  // Event listeners para botões de voltar
+  document.getElementById('btn-back-to-1').addEventListener('click', () => irParaStep(1));
+  document.getElementById('btn-back-to-2').addEventListener('click', () => irParaStep(2));
+
   // Event listeners para inputs (validação em tempo real)
   document.querySelectorAll('.medidas-form input').forEach(input => {
     input.addEventListener('input', validarMedidas);
